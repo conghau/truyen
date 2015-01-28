@@ -1,0 +1,720 @@
+common:
+ status_types:
+  1:
+    id:1
+    label:label_enable
+  2:
+    id:2
+    label:label_disable
+ auth_method:
+  1:
+    id:1
+    label:label_auth_image_confirm
+  2:
+    id:2
+    label:label_auth_phone
+ registered_type:
+  1:
+    id:1
+    label:label_registered_type_admin
+  2:
+    id:2
+    label:label_registered_type_recom
+  3:
+    id:3
+    label:label_registered_type_general
+ registered_status:
+  1:
+    id:0
+    label:label_registered_status_pend
+  2:
+    id:1
+    label:label_registered_status_active
+  3:
+    id:2
+    label:label_registered_status_denial
+  4:
+    id:3
+    label:label_registered_status_hold
+ pagination:
+  total_item: 3
+  per_page_list:
+   - 50
+   - 100
+   - 200
+ language:
+  english:
+   id:english
+   label:label_language_en
+  japanese:
+    id:japanese
+    label:label_language_jp
+ group:
+  group_public_status:
+    1:
+      id:1
+      label:label_status_public
+    2:
+      id:2
+      label:label_status_closed
+  group_status_types:
+    0:
+      id:0
+      label:label_wait_approve
+    1:
+      id:1
+      label:label_enable
+    2:
+      id:2
+      label:label_disable
+ profile:
+  gender_types:
+      1:
+        id:1
+        label:label_gender_male
+      2:
+        id:2
+        label:label_gender_female
+ activity:
+  post_types:
+      1:
+        id:1
+        label:label_activity_post_thread
+      2:
+        id:2
+        label:label_activity_post_comment
+  flag_delete:
+      1:
+        id:1
+        label:label_activity_post_enable
+      2:
+        id:2
+        label:label_activity_post_delete
+  expired_type:
+      '-1':
+        id:-1
+        label:label_expired_no_limit
+      0:
+        id:0
+        label:label_expired_designation
+      3:
+        id:3
+        label:label_expired_72h
+      365:
+        id:365
+        label:label_expired_1year
+  file_types:
+      1:
+        id:1
+        label:label_file_upload
+      2:
+        id:2
+        label:label_file_unzip
+ files:
+  expired_types:
+      1:
+        id:-1
+        label:label_upload_expired_type_indefined
+      2:
+        id:0
+        label:label_upload_expired_type_specify
+      3:
+        id:3
+        label:label_upload_expired_type_72_hours
+      4:
+        id:365
+        label:label_upload_expire_type_a_year
+  file_types:
+      1:
+        id:1
+        label:label_upload_file_type_upload
+      2:
+        id:2
+        label:label_upload_file_type_unzip
+ config_setting:
+  1:
+   id:1
+   label:label_invite_group
+  2:
+   id:2
+   label:label_accept_invite_group
+  3:
+   id:3
+   label:label_create_thread
+  4:
+   id:4
+   label:label_comment_thread
+  5:
+   id:5
+   label:label_set_time
+  6:
+   id:6
+   label:label_post_not_group
+  7:
+   id:7
+   label:label_comment_not_group
+  8:
+   id:8
+   label:label_post_group_owner
+  9:
+   id:9
+   label:label_comment_group
+  10:
+   id:10
+   label:label_set_time_read 
+ format_export_tsv:
+  1:
+   id:1
+   label:label_format_sjis
+  2:
+   id:2
+   label:label_format_utf8
+qualification:
+ japanese:
+  tsv_format:
+   - column: ID
+     name: 職種ID
+     description: 数値
+   - column: 資格・職種
+     name: 資格・職種
+     description: 文字列
+   - column: カテゴリー区分
+     name: カテゴリー区分
+     description: 数値（1:/2:/3:/4:）
+   - column: 並び順
+     name: 並び順
+     description: 数値
+   - column: ステータス
+     name: 有効ステータス
+     description: 数値(1:有効/2:無効)
+ english:
+  tsv_format:
+   - column: ID
+     name: qualification id
+     description: numeric
+   - column: Name
+     name: title
+     description: string
+   - column: Category
+     name: category code
+     description: numeric（1:/2:/3:/4:）
+   - column: Position
+     name: order position
+     description: numeric
+   - column: Status
+     name: valid
+     description: numeric(1:valid/2:invalid)
+admin:
+ japanese:
+  tsv_format:
+   - column: 管理者ID
+     name: 管理者ID
+     description: 数値
+   - column: メールアドレス
+     name: メールアドレス
+     description: 文字列(128)
+   - column: ログインID
+     name: ログインID
+     description: 文字列(64)
+   - column: パスワード
+     name: ログインパスワード
+     description: 文字列(255)
+   - column: 氏
+     name: 氏
+     description: 文字列(64)
+   - column: 名
+     name: 名
+     description: 文字列(64)
+   - column: 氏（ローマ字）
+     name: shi
+     description: 文字列(64)
+   - column: 名（ローマ字）
+     name: mei
+     description: 文字列(64)
+   - column: 性別
+     name: 性別
+     description: 数値(1:男性/2:女性)
+   - column: 生年月日
+     name: 生年月日
+     description: 日付(yyyy-mm-dd)
+   - column: 勤務先
+     name: 主な勤務先（医療機関、団体、企業等）
+     description: 文字列(255)
+   - column: 所属
+     name: 所属（診療科目・部門名等）
+     description: 文字列(255)
+   - column: 役職
+     name: 役職
+     description: 文字列(128)
+   - column: 電話番号
+     name: 連絡先電話番号
+     description: 文字列(15)
+   - column: 備考
+     name: 備考
+     description: 文字列
+   - column: 権限レベル
+     name: 権限レベル
+     description: 数値(1:管理者追加権限あり/2:管理者追加権限なし)
+   - column: 使用言語
+     name: 使用言語
+     description: 文字列(32)
+   - column: ステータス
+     name: 有効ステータス
+     description: 数値(1:有効/2:無効)
+ english:
+  tsv_format:
+   - column: Admin ID
+     name: Admin ID
+     description: numeric
+   - column: Email
+     name: Email
+     description: string(128)
+   - column: Login ID
+     name: Login ID
+     description: string(64)
+   - column: Password
+     name: Password
+     description: string(255)
+   - column: Last name
+     name: Last name ja
+     description: string(64)
+   - column: First name
+     name: First name ja
+     description: string(64)
+   - column: Last name (romaji)
+     name: Last name 
+     description: string(64)
+   - column: First name (romaji)
+     name: First name 
+     description: string(64)
+   - column: Gender
+     name: Gender
+     description: numeric(1:male/2:female)
+   - column: Birthday
+     name: Birthday
+     description: date(yyyy-mm-dd)
+   - column: Organization
+     name: Organization
+     description: string(255)
+   - column: Department
+     name: Department
+     description: string(255)
+   - column: Position
+     name: Position
+     description: string(128)
+   - column: Phone Number
+     name: Phone Number
+     description: string(15)
+   - column: Info
+     name: Info
+     description: string
+   - column: Role
+     name: Role
+     description: numeric(1:Additional administrative /2:No additional administrative)
+   - column: Language
+     name: Language
+     description: string(32)
+   - column: Status
+     name: Status
+     description: numeric(1:valid/2:invalid)
+user:
+ japanese:
+  tsv_format:
+   - column: ID
+     name: 利用者ID
+     description: 数値
+   - column: メールアドレス
+     name: メールアドレス
+     description: 文字列(128)
+   - column: ログインID
+     name: ログインID
+     description: 文字列(64)
+   - column: パスワード
+     name: ログインパスワード
+     description: 文字列(255)
+   - column: 氏
+     name: 氏
+     description: 文字列(64)
+   - column: 名
+     name: 名
+     description: 文字列(64)
+   - column: 氏（ローマ字)
+     name: shi
+     description: 文字列(64)
+   - column: 名（ローマ字)
+     name: mei
+     description: 文字列(64)
+   - column: 性別
+     name: 性別
+     description: 数値(1:男性/2:女性)
+   - column: 生年月日
+     name: 生年月日
+     description: 日付(yyyy-mm-dd)
+   - column: 資格 ID
+     name: 代表資格・職種（医療関連資格・職種）ID
+     description: 数値
+   - column: 職種
+     name: 資格・職種（医療関連資格・職種）詳細
+     description: 文字列(255)
+   - column: 主な勤務先
+     name: 主な勤務先（医療機関、団体、企業等）
+     description: 文字列(255)
+   - column: 所属・役職
+     name: 所属（診療科目・部門名等）
+     description: 文字列(255)
+   - column: 役職
+     name: 役職
+     description: 文字列(128)
+   - column: 勤務先電話番号
+     name: 勤務先電話番号
+     description: 文字列(20)
+   - column: 専門
+     name: 専門（診療科目、領域等）
+     description: 文字列(255)
+   - column: 専門の公開フラグ
+     name: 専門（診療科目、領域等）の公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: 指導医、専門医、認定医
+     name: 指導医、専門医、認定医
+     description: 文字列(255)
+   - column: 指導医、専門医、認定医の公開フラグ
+     name: 指導医、専門医、認定医の公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: その他の勤務先、経歴・職歴
+     name: その他の勤務先、経歴・職歴
+     description: 文字列
+   - column: その他の勤務先、経歴・職歴の公開フラグ
+     name: その他の勤務先、経歴・職歴の公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: 出身大学
+     name: 出身大学
+     description: 文字列(255)
+   - column: 出身大学の公開フラグ
+     name: 出身大学の公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: 論文
+     name: 論文
+     description: 文字列
+   - column: 論文の公開フラグ
+     name: 論文の公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: 著書
+     name: 著書
+     description: 文字列
+   - column: 著書の公開フラグ
+     name: 著書の公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: 所属学会
+     name: 所属学会
+     description: 文字列
+   - column: 所属学会の公開フラグ
+     name: 所属学会の公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: 私的活動、趣味
+     name: 私的活動、趣味
+     description: 文字列
+   - column: 私的活動、趣味の公開フラグ
+     name: 私的活動、趣味の公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: メッセージ
+     name: メッセージ
+     description: 文字列
+   - column: メッセージの公開フラグ
+     name: メッセージの公開フラグ
+     description: 数値(1:公開/2:非公開)
+   - column: 認証方法
+     name: 認証方法
+     description: 数値(1:画像/2:電話確認)
+   - column: 画像URL
+     name: 画像URL
+     description: 文字列(255)
+   - column: 確認先施設名
+     name: 確認先施設名
+     description: 文字列(255)
+   - column: 電話番号
+     name: 確認先電話番号
+     description: 文字列(20)
+   - column: DCFコード1
+     name: DCFコード1
+     description: 文字列(128)
+   - column: 医療機関1
+     name: 医療機関QLID1
+     description: 文字列(128)
+   - column: 医療機関2
+     name: 医療機関QLID2
+     description: 文字列(255)
+   - column: 専門1
+     name: 専門情報（診療科目・領域）1
+     description: 文字列(255)
+   - column: 専門2
+     name: 専門情報（診療科目・領域）2
+     description: 文字列(255)
+   - column: 専門3
+     name: 専門情報（診療科目・領域）3
+     description: 文字列(255)
+   - column: 専門4
+     name: 専門情報（診療科目・領域）4
+     description: 文字列(255)
+   - column: 専門5
+     name: 専門情報（診療科目・領域）5
+     description: 文字列(255)
+   - column: 企業コード
+     name: 企業コード
+     description: 文字列(255)
+   - column: 備考1
+     name: 備考1
+     description: 文字列
+   - column: 備考2
+     name: 備考2
+     description: 文字列
+   - column: 備考3
+     name: 備考3
+     description: 文字列
+   - column: 備考4
+     name: 備考4
+     description: 文字列
+   - column: 備考5
+     name: 備考5
+     description: 文字列
+   - column: 備考6
+     name: 備考6
+     description: 文字列
+   - column: 備考7
+     name: 備考7
+     description: 文字列
+   - column: 備考8
+     name: 備考8
+     description: 文字列
+   - column: 備考9
+     name: 備考9
+     description: 文字列
+   - column: 備考10
+     name: 備考10
+     description: 文字列
+   - column: 推薦会員ID
+     name: 推薦会員ID
+     description: 数値
+   - column: 登録経路
+     name: 登録経路
+     description: 数値(1:管理登録/2:推薦登録/3:一般登録)
+   - column: 会員登録経路
+     name: 登録状態
+     description: 数値(0:承認待ち/1:承認・有効会員/2:否認・無効会員/3:保留・無効会員)
+   - column: 登録管理者ID
+     name: 登録管理者ID
+     description: 数値
+   - column: 承認管理者ID
+     name: 承認管理者ID
+     description: 数値
+   - column: 使用言語
+     name: 使用言語
+     description: 文字列(32)
+   - column: 承認期限
+     name: 承認期限
+     description: 日付(yyyy-mm-dd h:m:s)
+   - column: 有効ステータス
+     name: 有効ステータス
+     description: 数値(1:有効/2:無効)
+   - column: 最大ファイルサイズ
+     name: 最大ファイルサイズ
+     description: 数値
+ english:
+  tsv_format:
+   - column: ID
+     name: ID
+     description: numeric
+   - column: Email
+     name: Email
+     description: string(128)
+   - column: Login ID
+     name: Login ID
+     description: string(64)
+   - column: Password
+     name: Password
+     description: string(255)
+   - column: Last name
+     name: Last name ja
+     description: string(64)
+   - column: First name
+     name: First name ja
+     description: string(64)
+   - column: Last name (romaji)
+     name: Last name
+     description: string(64)
+   - column: First name (romaji)
+     name: First name
+     description: string(64)
+   - column: Gender
+     name: Gender
+     description: numeric(1:male/2:female)
+   - column: Birthday
+     name: Birthday
+     description: date(yyyy-mm-dd)
+   - column: Qualification ID
+     name: Qualification id
+     description: numeric
+   - column: Qualification
+     name: Qualification
+     description: string(255)
+   - column: Organization
+     name: Organization
+     description: string(255)
+   - column: Department
+     name: Department
+     description: string(255)
+   - column: Position
+     name: Position
+     description: string(128)
+   - column: Phone number
+     name: Phone number
+     description: string(20)
+   - column: Domain
+     name: Domain
+     description: string(255)
+   - column: Domain_flag
+     name: Domain flag
+     description: numeric(1:public/2:private)
+   - column: Specialist
+     name: Specialist
+     description: string(255)
+   - column: Specialist_flag
+     name: Specialist flag
+     description: numeric(1:public/2:private)
+   - column: History
+     name: History
+     description: string
+   - column: History_flag
+     name: History flag
+     description: numeric(1:public/2:private)
+   - column: University
+     name: University
+     description: string(255)
+   - column: University_flag
+     name: University flag
+     description: numeric(1:public/2:private)
+   - column: Scholar
+     name: Scholar
+     description: string
+   - column: Scholar_flag
+     name: Scholar flag
+     description: numeric(1:public/2:private)
+   - column: Author
+     name: Author
+     description: string
+   - column: Author_flag
+     name: Author flag
+     description: numeric(1:public/2:private)
+   - column: Society
+     name: Society
+     description: string
+   - column: Society_flag
+     name: Society flag
+     description: numeric(1:public/2:private)
+   - column: Hobby
+     name: Hobby
+     description: string
+   - column: Hobby_flag
+     name: Hobby flag
+     description: numeric(1:public/2:private)
+   - column: Messsage
+     name: Messsage
+     description: string
+   - column: Messsage_flag
+     name: Messsage flag
+     description: numeric(1:public/2:private)
+   - column: Auth method
+     name: Auth method
+     description: numeric(1:image/2:phone)
+   - column: Confirm image Url
+     name: Confirm image Url
+     description: string(255)
+   - column: Confirm organization
+     name: Confirm organization
+     description: string(255)
+   - column: Confirm phone number
+     name: Confirm phone number
+     description: string(20)
+   - column: Dcf code1
+     name: Dcf code1
+     description: string(128)
+   - column: Qlid1
+     name: Qlid1
+     description: string(128)
+   - column: Qlid2
+     name: Qlid2
+     description: string(255)
+   - column: Domain1
+     name: Domain1
+     description: string(255)
+   - column: Domain2
+     name: Domain2
+     description: string(255)
+   - column: Domain3
+     name: Domain3
+     description: string(255)
+   - column: Domain4
+     name: Domain4
+     description: string(255)
+   - column: Domain5
+     name: Domain5
+     description: string(255)
+   - column: Company code
+     name: Company code
+     description: string(255)
+   - column: Remark1
+     name: Remark1
+     description: string
+   - column: Remark2
+     name: Remark2
+     description: string
+   - column: Remark3
+     name: Remark3
+     description: string
+   - column: Remark4
+     name: Remark4
+     description: string
+   - column: Remark5
+     name: Remark5
+     description: string
+   - column: Remark6
+     name: Remark6
+     description: string
+   - column: Remark7
+     name: Remark7
+     description: string
+   - column: Remark8
+     name: Remark8
+     description: string
+   - column: Remark9
+     name: Remark9
+     description: string
+   - column: Remark10
+     name: Remark10
+     description: string
+   - column: Recommend user id
+     name: Recommend user id
+     description: numeric
+   - column: Registered type
+     name: Registered type
+     description: numeric
+   - column: Registed status
+     name: Registed status
+     description: numeric
+   - column: Registed admin id
+     name: Registed admin id
+     description: numeric
+   - column: Approvaled admin id
+     name: Approvaled admin id
+     description: numeric
+   - column: Language
+     name: Language
+     description: string(32)
+   - column: Approved at
+     name: Approved at
+     description: datetime(yyyy-mm-dd h:m:s)
+   - column: Status
+     name: Status
+     description: numeric(1:valid/2:invalid)
+   - column: Max file size
+     name: Max file size
+     description: numeric

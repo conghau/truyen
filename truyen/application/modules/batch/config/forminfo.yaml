@@ -1,0 +1,11 @@
+command:
+ disk_storage: 'df -h /usr/local/apache2/ci_qlifebox/application 2>&1 | awk \'{print sprintf("%8s %8s %8s %8s", $2, $3, $4, $5)}\''
+mailto:
+ - 'nodat@sevenmedia.jp'
+ - 'kasai@sevenmedia.jp'
+from: 'no-reply@qlifebox.jp'
+subject: '[QLifeBOX] Storage Report'
+error_mailto:
+ - 'nodat@sevenmedia.jp'
+error_from: 'no-reply@qlifebox.jp'
+error_subject: '[QLifeBOX] Error Report'

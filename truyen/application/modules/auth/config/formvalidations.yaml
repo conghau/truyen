@@ -1,0 +1,26 @@
+auth/login:
+
+ - field: user_id
+   label: label_login_id
+   rules: trim|required|max_length[255]|password_matches[password]|xss_clean
+
+ - field: password
+   label: label_password
+   rules: trim|required|max_length[255]|xss_clean
+
+auth/pass_reissue_finish:
+ - field: txt_email
+   label: label_pass_reissue_email_address
+   rules: trim|required|valid_email|email_is_exist[users.email]|xss_clean
+
+ - field: txt_year
+   label: label_placeholder_year
+   rules: trim|required|numeric|xss_clean
+   
+ - field: txt_month
+   label: label_placeholder_month
+   rules: trim|required|numeric|xss_clean
+   
+ - field: txt_day
+   label: label_placeholder_day
+   rules: trim|required|numeric|xss_clean

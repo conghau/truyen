@@ -1,0 +1,4 @@
+group/regist:
+ - field: name
+   label: label_group_name
+   rules: trim|required|min_length[4]|max_length[255]|xss_clean
