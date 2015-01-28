@@ -1,0 +1,19 @@
+front:
+ group:
+  group_public_status:
+    1:
+      id:1
+      label:label_status_public
+    2:
+      id:2
+      label:label_status_closed
+  group_status_types:
+    0:
+      id:0
+      label:label_wait_approve
+    1:
+      id:1
+      label:label_enable
+    2:
+      id:2
+      label:label_disable

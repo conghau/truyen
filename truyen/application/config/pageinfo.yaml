@@ -1,0 +1,217 @@
+# デフォルト設定
+
+default:
+ default:
+  title: QLifeBOX コンサルタント＆カンファ用ファイル送信システム
+  keywords: QLife
+  description: QLife コンサルタント＆カンファ用ファイル送信システム
+  copyright: QLife
+
+sample:
+ index:
+  title: サンプルインデックス
+
+index:
+ index:
+  title: タイムラインプレビュー
+
+useradmin:
+ index:
+  title: ユーザー管理
+ create:
+  title: ユーザ新規登録
+ confirm_create:
+  title: ユーザ新規登録確認
+ store:
+  title: ユーザ新規登録完了画面
+ edit:
+  title: ユーザー詳細編集
+ confirm_edit:
+  title: ユーザー詳細編集確認
+ update:
+  title: ユーザー詳細編集完了
+ delete:
+  title: ユーザ削除完了
+ import_confirm:
+  title: ファイルアップロード検証結果
+ import_done:
+  title: アップロード実行完了
+ edit_setting:
+  title: 一括登録完了画面
+
+postadmin:
+ index:
+  title: スレッド管理
+ create:
+  title: スレッド新規登録
+ confirm_create:
+  title: スレッド新規登録確認
+ store:
+  title: スレッド新規登録完了
+ edit:
+  title: スレッド詳細編集
+ confirm_edit:
+  title: スレッド詳細編集確認
+ update:
+  title: スレッド詳細編集完了
+ delete:
+  title: スレッド削除完了
+ comment_edit:
+  title: コメント詳細編集
+ comment_confirm_edit:
+  title: コメント詳細編集確認
+ comment_update:
+  title: コメント詳細編集完了
+ comment_delete:
+  title: コメント削除完了
+
+approve:
+ index:
+  title: 承認管理管理
+ edit:
+  title: 承認ユーザー詳細
+ update:
+  title: 承認ユーザー詳細
+
+fileadmin:
+ index:
+  title: ファイル管理
+ edit:
+  title: ファイル詳細編集
+ confirm_edit:
+  title: ファイル詳細編集確認
+
+admin:
+ index:
+  title: 管理者管理
+ create:
+  title: 管理者新規登録
+ confirm_create:
+  title: 管理者新規登録確認
+ store:
+  title: 管理者新規登録完了
+ edit:
+  title: 管理者詳細編集
+ confirm_edit:
+  title: 管理者詳細編集確認
+ update:
+  title: 管理者詳細編集完了
+ delete:
+  title: 管理者削除完了
+ import_confirm:
+  title: ファイルアップロード検証結果
+ import_done:
+  title: アップロード実行完了
+
+groupadmin:
+ index:
+  title: グループ管理
+ create:
+  title: グループ新規登録
+ confirm_create:
+  title: グループ新規登録確認
+ store:
+  title: グループ新規登録完了
+ edit:
+  title: グループ詳細編集
+ confirm_edit:
+  title: グループ詳細編集確認
+ update:
+  title: グループ詳細編集確認完了
+ delete:
+  title: グループ削除完了
+
+userlog:
+ index:
+  title: ユーザー別ログ／集計
+ user_log:
+  title: ユーザー別ログ／集計
+
+grouplog:
+  index:
+   title:グループ別ログ／集計
+  group_log_detail:
+   title:グループ別ログ／集計
+
+filelog:
+ index:
+  title: ファイル別ログ／集計
+ file_log:
+  title: ファイル別ログ／集計
+
+threadlog:
+ index:
+  title: スレッド別ログ／集計
+ thread_log:
+  title: スレッド別ログ／集計
+
+entrylog:
+ index:
+  title: 入退会ログ／集計
+ detail:
+  title: 入退会ログ／集計
+
+qualification:
+  update:
+   title: 職種管理
+
+user:
+ index:
+  title: {$master_user_name}のQLifeBOX
+ personal_profile:
+  title: 個人プロフィール
+ create_general:
+  title: QLifeBOX 新規会員登録
+ confirm_create_general:
+  title: QLifeBOX 新規会員登録
+ create_recommend:
+  title: QLifeBOX 新規会員登録（招待）
+ confirm_create_recommend:
+  title: QLifeBOX 新規会員登録（招待）
+ active_user:
+  title: QLifeBOX ユーザー承認
+ change_email:
+  title: QLifeBOX メー ルアドレス変更完了
+ edit:
+  title: {$master_user_name}のQLifeBOX 勤務先等の編集
+ confirm_edit:
+  title: {$master_user_name}のQLifeBOX 勤務先等の編集
+ invite:
+  title: QLifeBOX 会員招待
+ confirm_invite:
+  title: QLifeBOX 会員招待
+terms:
+ index:
+  title:QLifeBOX 利用規約
+ 
+security:
+ index:
+  title:QLifeBOX 機能とセキュリティ
+  
+setting:
+ index:
+  title:　設定
+group:
+ index:
+  title:　{$master_group_name}のQLifeBOX
+ create:
+  title:　QLifeBOX 新規グループの作成
+ confirm_create:
+  title:　QLifeBOX 新規グループの作成
+ edit:
+  title: {$master_group_name}のQLifeBOX グループの編集
+ confirm_edit:
+  title: {$master_group_name}のQLifeBOX グループの編集
+inquiry:
+ index:
+  title: QLifeBOX お問い合わせ
+ confirm:
+  title:QLifeBOX お問い合わせ確認
+auth:
+ pass_reissue:
+  title: QLifeBOX パスワード再発行
+ pass_reissue_finish:
+  title: QLifeBOX パスワード再発行
+pageinfo_additional_keys:
+ - copyright
+ - author

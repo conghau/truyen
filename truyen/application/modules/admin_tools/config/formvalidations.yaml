@@ -1,0 +1,482 @@
+user/search:
+ - field: end_date
+   label: label_user_regist_date
+   rules: trim|check_date|check_end_date[start_date]|xss_clean
+ - field: start_date
+   label: label_user_regist_date
+   rules: trim|check_date|xss_clean
+ - field: id
+   label: label_user_id
+   rules: trim|numeric|xss_clean
+user/search_code:
+ - field: id
+   label: label_admin_id
+   rules: trim|numeric|xss_clean
+userlog/search:
+ - field: to_date
+   label: label_user_regist_date
+   rules: trim|check_date|check_end_date[from_date]|xss_clean
+ - field: from_date
+   label: label_user_regist_date
+   rules: trim|check_date|xss_clean
+threadlog/search:
+ - field: to_date
+   label: label_user_regist_date
+   rules: trim|check_date|check_end_date[from_date]|xss_clean
+ - field: from_date
+   label: label_user_regist_date
+   rules: trim|check_date|xss_clean
+ - field: id
+   label: label_post_id
+   rules: trim|numeric|xss_clean
+ - field: user_id
+   label: label_post_user_id
+   rules: trim|numeric|xss_clean
+user/create:
+ - field: login_id
+   label: label_user_login_id
+   rules: trim|required|alpha_numeric|min_length[6]|max_length[64]|is_unique[users.login_id]|is_unique[tmp_users.login_id]|xss_clean
+   
+ - field: first_name_ja
+   label: label_user_first_name_ja
+   rules: trim|required|max_length[64]|xss_clean
+
+ - field: last_name_ja
+   label: label_user_last_name_ja
+   rules: trim|required|max_length[64]|xss_clean
+   
+ - field: first_name
+   label: label_user_first_name
+   rules: trim|required|alpha_numeric|max_length[64]|xss_clean
+   
+ - field: last_name
+   label: label_user_last_name
+   rules: trim|required|alpha_numeric|max_length[64]|xss_clean
+   
+ - field: birthday
+   label: label_user_birthday
+   rules: trim|required|max_length[10]|xss_clean
+   
+ - field: gender
+   label: label_user_gender
+   rules: trim|required|xss_clean
+   
+ - field: email
+   label: label_user_email
+   rules: trim|required|valid_email|is_unique_email_registered[users.email]|is_unique_email_request[users.email]|is_unique_email_invite[users.email]|xss_clean
+   
+ - field: password
+   label: label_user_password
+   rules: trim|required|alpha_numeric|min_length[7]|max_length[255]|xss_clean
+   
+ - field: re_password
+   label: label_user_re_password
+   rules: trim|required|alpha_numeric|min_length[7]|max_length[255]|confirm_pasword_matches[re_password]|xss_clean
+ 
+ - field: organization
+   label: label_user_organization
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: department
+   label: label_user_department
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: position
+   label: label_user_position
+   rules: trim|max_length[128]|xss_clean
+   
+ - field: phone_number
+   label: label_user_phone_number
+   rules: trim|max_length[20]|is_valid_phone_number|xss_clean
+   
+ - field: domain
+   label: label_user_domain
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: university
+   label: label_user_university
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: company_code
+   label: label_user_company_code
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: message
+   label: label_user_message
+   rules: trim|xss_clean
+   
+ - field: hobby
+   label: label_user_hobby
+   rules: trim|xss_clean
+   
+ - field: society
+   label: label_user_society
+   rules: trim|xss_clean
+   
+ - field: author
+   label: label_user_author
+   rules: trim|xss_clean
+   
+ - field: scholar
+   label: label_user_scholar
+   rules: trim|xss_clean
+user/edit:
+ - field: login_id
+   label: label_user_login_id
+   rules: trim|required|alpha_numeric|min_length[6]|max_length[64]|callback_check_login_id[login_id]|xss_clean
+   
+ - field: first_name_ja
+   label: label_user_first_name_ja
+   rules: trim|required|max_length[64]|xss_clean
+
+ - field: last_name_ja
+   label: label_user_last_name_ja
+   rules: trim|required|max_length[64]|xss_clean
+   
+ - field: first_name
+   label: label_user_first_name
+   rules: trim|required|alpha_numeric|max_length[64]|xss_clean
+   
+ - field: last_name
+   label: label_user_last_name
+   rules: trim|required|alpha_numeric|max_length[64]|xss_clean
+   
+ - field: birthday
+   label: label_user_birthday
+   rules: trim|required|max_length[10]|xss_clean
+   
+ - field: gender
+   label: label_user_gender
+   rules: trim|required|xss_clean
+   
+ - field: email
+   label: label_user_email
+   rules: trim|required|valid_email|xss_clean
+   
+ - field: organization
+   label: label_user_organization
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: department
+   label: label_user_department
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: position
+   label: label_user_position
+   rules: trim|max_length[128]|xss_clean
+   
+ - field: phone_number
+   label: label_user_phone_number
+   rules: trim|max_length[20]|is_valid_phone_number|xss_clean
+   
+ - field: domain
+   label: label_user_domain
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: university
+   label: label_user_university
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: company_code
+   label: label_user_company_code
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: message
+   label: label_user_message
+   rules: trim|xss_clean
+   
+ - field: hobby
+   label: label_user_hobby
+   rules: trim|xss_clean
+   
+ - field: society
+   label: label_user_society
+   rules: trim|xss_clean
+   
+ - field: author
+   label: label_user_author
+   rules: trim|xss_clean
+   
+ - field: scholar
+   label: label_user_scholar
+   rules: trim|xss_clean
+user/edit_email:
+ - field: email
+   label: label_user_email
+   rules: trim|required|valid_email|is_unique_email_registered[users.email]|is_unique_email_request[users.email]|is_unique_email_invite[users.email]|xss_clean
+user/change_password:
+ - field: password
+   label: label_user_password
+   rules: trim|required|alpha_numeric|min_length[7]|max_length[255]|xss_clean
+   
+ - field: re_password
+   label: label_user_re_password
+   rules: trim|required|alpha_numeric|min_length[7]|max_length[255]|confirm_pasword_matches[re_password]|xss_clean
+post/search:
+ - field: from_date
+   label: label_created_date
+   rules: trim|check_date|xss_clean
+   
+ - field: to_date
+   label: label_created_date
+   rules: trim|check_date|check_end_date[from_date]|xss_clean
+   
+ - field: post_id
+   label: label_post_id
+   rules: trim|numeric|xss_clean
+   
+ - field: group_id
+   label: label_post_group_dest_id
+   rules: trim|numeric|xss_clean
+   
+ - field: user_id
+   label: label_post_user_id
+   rules: trim|numeric|xss_clean
+   
+post/regist:
+ - field: title
+   label: label_post_title
+   rules: trim|required|min_length[4]|max_length[255]|xss_clean
+   
+      
+ - field: body
+   label: label_post_body
+   rules: trim|required|min_length[4]|xss_clean
+   
+post/edit:
+ - field: body
+   label: label_body
+   rules: trim|required|min_length[4]|xss_clean
+   
+ - field: comment_body[]
+   label: label_body
+   rules: trim|required|min_length[4]|xss_clean
+   
+comment/regist:
+ - field: body
+   label: label_body
+   rules: trim|required|min_length[4]|xss_clean
+   
+group/search:
+ - field: date_to
+   label: label_created_date
+   rules: trim|check_date|check_end_date[date_from]|xss_clean
+   
+ - field: date_from
+   label: label_created_date
+   rules: trim|check_date|xss_clean
+   
+ - field: id
+   label: label_post_group_id
+   rules: trim|numeric|xss_clean
+   
+group/regist:
+ - field: name
+   label: label_group_name
+   rules: trim|required|min_length[4]|max_length[255]|xss_clean
+   
+ - field: summary
+   label: label_group_summary
+   rules: trim|xss_clean
+   
+ - field: group_owner
+   label: label_group_owner_id
+   rules: trim|required|numeric|max_length[11]|is_exist[users.id]|xss_clean
+   
+admin/create:
+ - field: login_id
+   label: label_admin_login_id
+   rules: trim|required|alpha_numeric|min_length[6]|max_length[64]|is_unique[admins.login_id]|xss_clean 
+   
+ - field: email
+   label: label_admin_email
+   rules: trim|required|valid_email|xss_clean
+   
+ - field: first_name_ja
+   label: label_admin_first_name_ja
+   rules: trim|required|max_length[64]|xss_clean
+   
+ - field: last_name_ja
+   label: label_admin_last_name_ja
+   rules: trim|required|max_length[64]|xss_clean
+   
+ - field: first_name
+   label: label_admin_first_name
+   rules: trim|alpha_numeric|max_length[64]|xss_clean
+   
+ - field: last_name
+   label: label_admin_last_name
+   rules: trim|alpha_numeric|max_length[64]|xss_clean
+   
+ - field: phone_number
+   label: label_admin_phone_number
+   rules: trim|max_length[15]|is_valid_phone_number|xss_clean
+   
+ - field: birthday
+   label: label_admin_birthday
+   rules: trim|max_length[10]|xss_clean
+   
+ - field: password
+   label: label_admin_password
+   rules: trim|required|alpha_numeric|min_length[7]|max_length[255]|xss_clean
+   
+ - field: re_password
+   label: label_admin_re_password
+   rules: trim|required|alpha_numeric|min_length[7]|max_length[255]|confirm_pasword_matches[re_password]|xss_clean
+   
+ - field: organization
+   label: label_admin_organization
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: department
+   label: label_admin_department
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: info
+   label: label_admin_txtinfo
+   rules: trim|xss_clean
+   
+ - field: position
+   label: label_admin_position
+   rules: trim|max_length[128]|xss_clean
+admin/update:
+ - field: login_id
+   label: label_admin_login_id
+   rules: trim|required|alpha_numeric|min_length[6]|max_length[64]|callback_check_login_id[login_id]|xss_clean 
+   
+ - field: email
+   label: label_admin_email
+   rules: trim|required|valid_email|xss_clean
+   
+ - field: first_name_ja
+   label: label_admin_first_name_ja
+   rules: trim|required|max_length[64]|xss_clean
+   
+ - field: last_name_ja
+   label: label_admin_last_name_ja
+   rules: trim|required|max_length[64]|xss_clean
+   
+ - field: first_name
+   label: label_admin_first_name
+   rules: trim|alpha_numeric|max_length[64]|xss_clean
+   
+ - field: last_name
+   label: label_admin_last_name
+   rules: trim|alpha_numeric|max_length[64]|xss_clean
+   
+ - field: phone_number
+   label: label_admin_phone_number
+   rules: trim|max_length[15]|is_valid_phone_number|xss_clean
+   
+ - field: birthday
+   label: label_admin_birthday
+   rules: trim|max_length[10]|xss_clean
+   
+ - field: organization
+   label: label_admin_organization
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: department
+   label: label_admin_department
+   rules: trim|max_length[255]|xss_clean
+   
+ - field: info
+   label: label_admin_txtinfo
+   rules: trim|xss_clean
+   
+ - field: position
+   label: label_admin_position
+   rules: trim|max_length[128]|xss_clean
+admin/change_password:
+ - field: password
+   label: label_admin_password
+   rules: trim|required|alpha_numeric|min_length[7]|max_length[255]|xss_clean
+   
+ - field: re_password
+   label: label_admin_re_password
+   rules: trim|required|alpha_numeric|min_length[7]|max_length[255]|confirm_pasword_matches[re_password]|xss_clean
+authadmin/login:
+ - field: admin_id
+   label: label_login_id
+   rules: trim|required|max_length[255]|admin_password_matches[password]|xss_clean
+
+ - field: password
+   label: label_password
+   rules: trim|required|max_length[255]|xss_clean
+   
+qualification/confirm_edit:
+ - field: name[]
+   label: label_qualification_name
+   rules: trim|required|max_length[255]|xss_clean
+   
+ - field: category_id[]
+   label: label_qualification_category_id
+   rules: trim|required|numeric|greater_than[0]|less_than[128]|xss_clean
+  
+ - field: position[]
+   label: label_qualification_position
+   rules: trim|required|numeric|greater_than[0]|less_than[999999999]|xss_clean
+file/search:
+ - field: created_date_start
+   label: label_user_expired_at
+   rules: trim|check_date|xss_clean
+   
+ - field: created_date_end
+   label: label_user_expired_at
+   rules: trim|check_date|check_end_date[created_date_start]|xss_clean
+   
+ - field: expired_date_end
+   label: label_user_expired_at
+   rules: trim|check_date|check_end_date[expired_date_start]|xss_clean
+
+ - field: expired_date_start
+   label: label_user_expired_at
+   rules: trim|check_date|xss_clean
+   
+ - field: upload_id
+   label: label_activity_upload_id
+   rules: trim|numeric|xss_clean
+   
+ - field: user_id
+   label: label_post_user_send_id
+   rules: trim|numeric|xss_clean
+   
+ - field: post_id
+   label: label_post_id
+   rules: trim|numeric|xss_clean
+   
+file/edit:
+ - field: expired_date
+   label: label_upload_expired_at
+   rules: trim|required|check_expired_date[expired_date]|xss_clean
+entrylog/search:
+ - field: end_date
+   label: label_user_regist_date
+   rules: trim|check_date|check_end_date[start_date]|xss_clean
+ - field: start_date
+   label: label_user_regist_date
+   rules: trim|check_date|xss_clean
+grouplog/search:
+ - field: date_to
+   label: label_user_regist_date
+   rules: trim|check_date|check_end_date[date_from]|xss_clean
+ - field: date_from
+   label: label_user_regist_date
+   rules: trim|check_date|xss_clean
+ - field: id
+   label: label_post_group_id
+   rules: trim|numeric|xss_clean
+grouplogdetail/search:
+ - field: to_date
+   label: label_user_regist_date
+   rules: trim|check_date|check_end_date[from_date]|xss_clean
+ - field: from_date
+   label: label_user_regist_date
+   rules: trim|check_date|xss_clean
+filelog/search:
+ - field: created_date_start
+   label: label_user_regist_date
+   rules: trim|check_date|xss_clean
+ - field: created_date_end
+   label: label_user_regist_date
+   rules: trim|check_date|check_end_date[created_date_start]|xss_clean
