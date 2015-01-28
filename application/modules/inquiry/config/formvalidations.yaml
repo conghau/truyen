@@ -1,0 +1,17 @@
+inquiry/no_login_index:
+ - field: user_name
+   label: lalel_inquiry_mr_name
+   rules: trim|required|max_length[128]|xss_clean  
+
+ - field: mail_address
+   label: label_inquiry_mail_address
+   rules: trim|required|valid_email|max_length[128]|xss_clean
+    
+ - field: content
+   label: label_inquiry_content
+   rules: trim|required|xss_clean
+   
+inquiry/index:  
+ - field: content
+   label: label_inquiry_content
+   rules: trim|required|xss_clean
