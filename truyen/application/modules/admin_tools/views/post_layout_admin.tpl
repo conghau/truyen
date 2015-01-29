@@ -1,1 +1,0 @@
-{include file='master_post_layout_admin.tpl'}

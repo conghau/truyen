@@ -2,6 +2,9 @@
 block is defined in the master.php template *} {block name=title}
 {$title} {/block} {* This block is defined in the master.php template *}
 {block name=body}
+{foreach $list_author as $key => $rset}
+	<p>{$rset->tacgia}</p>
+{/foreach}
 <div class="row">
 	<br>
 	<div class="col-md-2 col-sm-3 text-center">

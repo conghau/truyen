@@ -1,8 +1,0 @@
-common:
-  profile:
-    gender_types:
-      1:男性
-      2:女性
-  status:
-      1:有効
-      2:無効

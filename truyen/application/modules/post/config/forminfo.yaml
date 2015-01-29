@@ -1,8 +1,0 @@
-expired_types:
-  3:
-    id:3
-    label:label_upload_expired_type_72_hours
-  4:
-    id:365
-    label:label_upload_expire_type_a_year
-

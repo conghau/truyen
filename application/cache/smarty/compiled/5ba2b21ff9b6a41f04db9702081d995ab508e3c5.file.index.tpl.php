@@ -1,35 +1,35 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2015-01-28 17:10:01
+<?php /* Smarty version Smarty-3.1.7, created on 2015-01-29 15:44:36
          compiled from "application/modules/story/views/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:130750095954c8b070271b50-23213839%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:10573778754c9f2f4adafa1-93881241%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5ba2b21ff9b6a41f04db9702081d995ab508e3c5' => 
     array (
       0 => 'application/modules/story/views/index.tpl',
-      1 => 1422439800,
+      1 => 1422511401,
       2 => 'file',
     ),
     'df981e7cc2f22ff9f2a23a1e75c768f459381a3b' => 
     array (
       0 => 'application/modules/layout/views/master.tpl',
-      1 => 1422438604,
+      1 => 1422440372,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '130750095954c8b070271b50-23213839',
+  'nocache_hash' => '10573778754c9f2f4adafa1-93881241',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_54c8b0703b8db',
   'variables' => 
   array (
     'fixed_base_url' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_54c9f2f4bf072',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_54c8b0703b8db')) {function content_54c8b0703b8db($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_54c9f2f4bf072')) {function content_54c9f2f4bf072($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -209,6 +209,16 @@ assets/css/kendo.metro.css"/> -->
 									<li class="active">Data</li>
 								</ul>
 								
+<?php  $_smarty_tpl->tpl_vars['rset'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rset']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['list_author']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rset']->key => $_smarty_tpl->tpl_vars['rset']->value){
+$_smarty_tpl->tpl_vars['rset']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['rset']->key;
+?>
+	<p><?php echo $_smarty_tpl->tpl_vars['rset']->value->tacgia;?>
+</p>
+<?php } ?>
 <div class="row">
 	<br>
 	<div class="col-md-2 col-sm-3 text-center">
