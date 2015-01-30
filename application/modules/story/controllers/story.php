@@ -29,29 +29,39 @@ class Story extends MY_Controller {
 	 */
 	public function index($user_id = null) {
 		try {
-			$objAuthorDao = new AuthorDao();
-			$arrData = array();
-			$recordset = $objAuthorDao->getAuthor();
-// 			foreach ($recordset as $record) {
-// 			    $arr = array();
-// 			    $arr['name'] = $record->tacgia;
-// 			    array_push($arrData, $arr);
-			    
-// 			}
-// 			$objAuthorDao->insert_bulk($arrData);
-			echo 'xong';
-			$this->data['list_author'] = $recordset;
-			//var_dump($result);
-		//die;
-			$this->parse('index.tpl', 'user/index');
+		    $objStoryDao = new StoryDao();
+		    //var_dump($objStoryDao->get());die;
+		    $this->data['list_story'] = $objStoryDao->get()->all;
+		    // 			foreach ($recordset as $record) {
+		    // 			    $arr = array();
+		    // 			    $arr['name'] = $record->tacgia;
+		    // 			    array_push($arrData, $arr);
+		     
+		    // 			}
+		    // 			$objAuthorDao->insert_bulk($arrData);
+		    //echo 'xong';
+		    //$this->data['list_author'] = $recordset;
+		    //var_dump($result);
+		    //die;
+		    $this->parse('index.tpl', 'user/index');
 		} catch (Exception $e) {
 			log_message('error', $e->getMessage());
 			show_error($e->getMessage());
 		}
 	}
+
+	public function category($category_id = 0)
+	{
+
+	}
 	
 	public function view_story($story_id = null) {
-		try {
+		try {$this->output->enable_profiler(TRUE);
+			//$objStoryDao = new StoryDao();
+			$objStoryDetailDao = new Story_DetailDao();
+            var_dump($story_id);
+			//$this->data['story'] = $objStoryDao->get_by_id($story_id);
+			var_dump($objStoryDetailDao->getByStoryId($story_id));
 			$this->parse('story_introduce.tpl', 'user/story');
 		} catch (Exception $e) {
 			log_message('error', $e->getMessage());

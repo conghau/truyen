@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2015-01-30 16:15:10
-         compiled from "application/modules/story/views/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:10573778754c9f2f4adafa1-93881241%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.7, created on 2015-01-30 16:15:20
+         compiled from "application/modules/story/views/story_introduce.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:192011286354cb4ba8c66145-34575655%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '5ba2b21ff9b6a41f04db9702081d995ab508e3c5' => 
+    'ba42ef2c24dcb91b33ed7215094cf94d3742c959' => 
     array (
-      0 => 'application/modules/story/views/index.tpl',
-      1 => 1422609294,
+      0 => 'application/modules/story/views/story_introduce.tpl',
+      1 => 1422440372,
       2 => 'file',
     ),
     'df981e7cc2f22ff9f2a23a1e75c768f459381a3b' => 
@@ -17,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10573778754c9f2f4adafa1-93881241',
+  'nocache_hash' => '192011286354cb4ba8c66145-34575655',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_54c9f2f4bf072',
   'variables' => 
   array (
     'fixed_base_url' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_54cb4ba8cce7b',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_54c9f2f4bf072')) {function content_54c9f2f4bf072($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_54cb4ba8cce7b')) {function content_54cb4ba8cce7b($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,8 +38,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>
-<?php echo $_smarty_tpl->tpl_vars['title']->value;?>
- </title>
+	<?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+
+</title>
 
 <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['fixed_base_url']->value;?>
 assets/css/style.css" />
@@ -209,63 +210,137 @@ assets/css/kendo.metro.css"/> -->
 									<li class="active">Data</li>
 								</ul>
 								
-<div style="width :150px;text-overflow: ellipsis">block is defined in the master.php templateblock is defined in the master.php templateblock is defined in the master.php templateblock is defined in the master.php template</div>
-<?php  $_smarty_tpl->tpl_vars['story'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['story']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['list_story']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['story']->key => $_smarty_tpl->tpl_vars['story']->value){
-$_smarty_tpl->tpl_vars['story']->_loop = true;
-?>
-	<div class="row">
-	<br>
-	<div class="col-md-2 col-sm-3 text-center">
-		<a class="story-img" href="#"><img
-			src="http://10.190.201.207/lar/public/imgs/news/40/banner.png"
-			style="width: 100px; height: 100px" class="img-circle"></a>
-	</div>
-	<div class="col-md-10 col-sm-9">
-		<h3><?php echo $_smarty_tpl->tpl_vars['story']->value->title;?>
-</h3>
-		<div class="row">
-			<div class="col-xs-9">
-				<div><?php echo $_smarty_tpl->tpl_vars['story']->value->introduce;?>
-</div>
-				<p class="lead">
-					<a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
-story/detail/<?php echo $_smarty_tpl->tpl_vars['story']->value->id;?>
-"
-						class="btn btn-default">Read More</a>
-				</p>
-				<p class="pull-right">
-					<span class="label label-default">keyword</span> <span
-						class="label label-default">tag</span> <span
-						class="label label-default">post</span>
-				</p>
-				<ul class="list-inline">
-					<li><a href="#">2 Days Ago</a></li>
-					<li><a href="#"><i class="fa fa-comment"></i> 4 Comments</a></li>
-					<li><a href="#"><i class="fa fa-share-alt"></i> 34 Shares</a></li>
-				</ul>
-			</div>
-			<div class="col-xs-3"></div>
-		</div>
-		<br>
-		<br>
-	</div>
-</div>
-<hr>
-<?php } ?>
-
-
-<ul class="pagination">
-	<li><a href="#">Prev</a></li>
-	<li><a href="#">1</a></li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-	<li><a href="#">Next</a></li>
-</ul>
-
+<div class="col-md-12 column">
+					<div class="media well">
+						 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/" class="media-object" alt='' /></a>
+						<div class="media-body">
+							<h4 class="media-heading">
+								Nested media heading
+							</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+							<div class="media">
+								 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/" class="media-object" alt='' /></a>
+								<div class="media-body">
+									<h4 class="media-heading">
+										Nested media heading
+									</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+								</div>
+							</div>
+						</div>
+					</div>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>
+									#
+								</th>
+								<th>
+									Product
+								</th>
+								<th>
+									Payment Taken
+								</th>
+								<th>
+									Status
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									1
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									01/04/2012
+								</td>
+								<td>
+									Default
+								</td>
+							</tr>
+							<tr class="active">
+								<td>
+									1
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									01/04/2012
+								</td>
+								<td>
+									Approved
+								</td>
+							</tr>
+							<tr class="success">
+								<td>
+									2
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									02/04/2012
+								</td>
+								<td>
+									Declined
+								</td>
+							</tr>
+							<tr class="warning">
+								<td>
+									3
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									03/04/2012
+								</td>
+								<td>
+									Pending
+								</td>
+							</tr>
+							<tr class="danger">
+								<td>
+									4
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									04/04/2012
+								</td>
+								<td>
+									Call in to confirm
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="pagination">
+						<li>
+							<a href="#">Prev</a>
+						</li>
+						<li>
+							<a href="#">1</a>
+						</li>
+						<li>
+							<a href="#">2</a>
+						</li>
+						<li>
+							<a href="#">3</a>
+						</li>
+						<li>
+							<a href="#">4</a>
+						</li>
+						<li>
+							<a href="#">5</a>
+						</li>
+						<li>
+							<a href="#">Next</a>
+						</li>
+					</ul>
+				</div>
 
 
 

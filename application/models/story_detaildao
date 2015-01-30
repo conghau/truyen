@@ -1,0 +1,17 @@
+<?php
+require_once APPPATH.'models/MY_DataMapper.php';
+class Story_DetailDao extends My_DataMapper {
+	var $table = 'storys';
+	var $db_params = SLAVE;
+	
+	function __construct($db_params = SLAVE) {
+		$this->db_params = $db_params;
+		parent::__construct($db_params);
+	}
+
+	function getByStoryId($story_id) {
+		return $this->select('chapter','date')->where('story_id',$story_id)->get->all;
+
+	}
+
+}
