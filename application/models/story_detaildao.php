@@ -10,11 +10,9 @@ class Story_DetailDao extends My_DataMapper {
 	}
 
 	function getByStoryId($story_id) {
-	    $sqlWhere['id'] = 2;
-	    //$this->where($sqlWhere);
-	    $result = $this->get();
+		$this->select("id, chapter");
+	    $this->where('story_id = ', $story_id);
+	    $result = $this->get()->all;
 		return $result;
-
 	}
-
 }

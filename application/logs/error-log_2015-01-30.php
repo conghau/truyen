@@ -1,7 +1,0 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
-
-2015-01-30 16:51:09	ERROR	::1	Severity: Warning  --> filemtime(): stat failed for application/modules/layout/views/application/modules/story/views/story_introduce.tpl /home/hautruong/project/truyen/application/third_party/Smarty/sysplugins/smarty_resource.php 317
-2015-01-30 16:56:46	ERROR	::1	Severity: Warning  --> filemtime(): stat failed for application/modules/layout/views/application/modules/story/views/story_introduce.tpl /home/hautruong/project/truyen/application/third_party/Smarty/sysplugins/smarty_resource.php 317
-2015-01-30 16:56:46	ERROR	::1	Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/hautruong/project/truyen/application/modules/story/controllers/story.php:64) /home/hautruong/project/truyen/system/core/Output.php 391
-2015-01-30 17:06:43	ERROR	::1	Severity: Warning  --> filemtime(): stat failed for application/modules/layout/views/application/modules/story/views/story_introduce.tpl /home/hautruong/project/truyen/application/third_party/Smarty/sysplugins/smarty_resource.php 317
-2015-01-30 17:06:43	ERROR	::1	Severity: Warning  --> Cannot modify header information - headers already sent by (output started at /home/hautruong/project/truyen/application/modules/story/controllers/story.php:64) /home/hautruong/project/truyen/system/core/Output.php 391

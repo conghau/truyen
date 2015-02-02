@@ -24,8 +24,6 @@ class Errors extends MY_Controller {
 
     public function index($code = 'system_error') {
     	try {
-			$this->data["no_had_left"] = true;
-			$this->data["no_had_top_right"] = true;
 			$this->data['message_code'] = $code;
 	        $this->parse("general.tpl", "errors/not_supported");
 		} catch (Exception $e) {
@@ -35,8 +33,6 @@ class Errors extends MY_Controller {
 
     public function not_supported() {
     	try {
-			$this->data["no_had_left"] = true;
-			$this->data["no_had_top_right"] = true;
 			$this->data['message_code'] = 'not_supported';
 	        $this->parse("general.tpl", "errors/not_supported");
 		} catch (Exception $e) {
@@ -46,8 +42,6 @@ class Errors extends MY_Controller {
 
 	public function not_found() {
     	try {
-			$this->data["no_had_left"] = true;
-			$this->data["no_had_top_right"] = true;
 			$this->data['message_code'] = 'not_found';
 	        $this->parse("general.tpl", "errors/not_supported");
 		} catch (Exception $e) {
@@ -57,8 +51,6 @@ class Errors extends MY_Controller {
 	
 	public function invalid_session() {
 		try {
-			$this->data["no_had_left"] = true;
-			$this->data["no_had_top_right"] = true;
 			$this->data['message_code'] = 'invalid_session';
 			$this->parse("general.tpl", "errors/invalid_session");
 		} catch (Exception $e) {

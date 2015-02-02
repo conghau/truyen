@@ -30,19 +30,13 @@ class Story extends MY_Controller {
 	public function index($user_id = null) {
 		try {
 		    $objStoryDao = new StoryDao();
-		    //var_dump($objStoryDao->get());die;
-		    $this->data['list_story'] = $objStoryDao->get()->all;
-		    // 			foreach ($recordset as $record) {
-		    // 			    $arr = array();
-		    // 			    $arr['name'] = $record->tacgia;
-		    // 			    array_push($arrData, $arr);
-		     
-		    // 			}
-		    // 			$objAuthorDao->insert_bulk($arrData);
-		    //echo 'xong';
-		    //$this->data['list_author'] = $recordset;
-		    //var_dump($result);
-		    //die;
+		    //pagination
+		    $url = $this->data['base_url']."story/paginate";
+		    $uri_segment = 3;
+		    $total_records = $objStoryDao->count_by_condition();
+		   	$limit = $this->create_pagination($total_records, '', $url, $uri_segment);
+		   	$this->data['list_story'] = $objStoryDao->search('',$limit);
+		   	
 		    $this->parse('index.tpl', 'user/index');
 		} catch (Exception $e) {
 			log_message('error', $e->getMessage());
@@ -56,19 +50,35 @@ class Story extends MY_Controller {
 	}
 	
 	public function view_story($story_id = null) {
-		try {$this->output->enable_profiler(TRUE);
-			//$objStoryDao = new StoryDao();
+		try {
+			$objStoryDao = new StoryDao();
+			$this->data['story_title'] =url_friendly($objStoryDao->getFIELD_byId('title',$story_id)->title);
+			echo $this->data['story_title'];
 			$objStoryDetailDao = new Story_DetailDao();
-            var_dump($story_id);
-			//$this->data['story'] = $objStoryDao->get_by_id($story_id);
-			var_dump($objStoryDetailDao->getByStoryId($story_id));
+			$this->data['lstChapter'] = $objStoryDetailDao->getByStoryId($story_id);
 			$this->parse('story_introduce.tpl', 'user/story');
 		} catch (Exception $e) {
 			log_message('error', $e->getMessage());
 			show_error($e->getMessage());
 		}
 	}
-
+	
+	public function view_chapter($chapter_id) {
+		try {
+			$objStoryDetailDao = new Story_DetailDao();
+			
+			$chapter = $objStoryDetailDao->get_by_id($chapter_id);
+			$lst_chapter = $objStoryDetailDao->getByStoryId($chapter->story_id);
+			$this->data['lstChapter'] = $lst_chapter;
+			$this->data['chapter_content'] = $chapter;
+			
+			$this->parse('view_chapter.tpl', 'user/story');
+		} catch (Exception $e) {
+			log_message('error', $e->getMessage());
+			show_error($e->getMessage());
+		}
+	}
+	
 	public function view_file($post_id = null) {
 		try {
 			$this->setup_view_post($post_id);

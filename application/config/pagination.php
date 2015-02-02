@@ -4,7 +4,7 @@ $config['pagination_admin'] = array(
 			'per_page'		 => 50,
 			'num_links'		 => 10,
 			// full link
-			'full_tag_open'	 => '<ul>',
+			'full_tag_open'	 => '<ul class=\"pagination\">',
 			'full_tag_close' => '</ul>',
 			// digit link
 			'num_tag_open'	 => '<li>',
@@ -35,7 +35,7 @@ $config['pagination'] = array(
 			'per_page'		 => 10,
 			'num_links'		 => 5,
 			// full link
-			'full_tag_open'	 => '<ul>',
+			'full_tag_open'	 => '<ul class="pagination">',
 			'full_tag_close' => '</ul>',
 			// digit link
 			'num_tag_open'	 => '<li>',

@@ -2,9 +2,8 @@
 block is defined in the master.php template *} {block name=title}
 {$title} {/block} {* This block is defined in the master.php template *}
 {block name=body}
-<div style="width :150px;text-overflow: ellipsis">block is defined in the master.php templateblock is defined in the master.php templateblock is defined in the master.php templateblock is defined in the master.php template</div>
 {foreach $list_story as $story}
-	<div class="row">
+<div class="row">
 	<br>
 	<div class="col-md-2 col-sm-3 text-center">
 		<a class="story-img" href="#"><img
@@ -17,7 +16,7 @@ block is defined in the master.php template *} {block name=title}
 			<div class="col-xs-9">
 				<div>{$story->introduce}</div>
 				<p class="lead">
-					<a href="{$base_url}story/detail/{$story->id}"
+					<a href="{$base_url}story/detail/{$story->id}_{url_friendly($story->title)}.html"
 						class="btn btn-default">Read More</a>
 				</p>
 				<p class="pull-right">
@@ -33,22 +32,11 @@ block is defined in the master.php template *} {block name=title}
 			</div>
 			<div class="col-xs-3"></div>
 		</div>
-		<br>
-		<br>
+		<br> <br>
 	</div>
 </div>
 <hr>
 {/foreach}
-
-
-<ul class="pagination">
-	<li><a href="#">Prev</a></li>
-	<li><a href="#">1</a></li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-	<li><a href="#">Next</a></li>
-</ul>
+<div class="page clearfix">{$links}</div>
 
 {/block}

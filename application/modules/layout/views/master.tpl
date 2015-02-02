@@ -7,17 +7,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{block name=title}{/block}</title>
-
-<link rel="stylesheet" href="{$fixed_base_url}assets/css/style.css" />
-<link rel="stylesheet"
-	href="{$fixed_base_url}assets/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="{$fixed_base_url}assets/bootstrap/css/style.css" />
-<link rel="stylesheet"
-	href="{$fixed_base_url}assets/bootstrap/css/bootstrap-theme.min.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- <link rel="stylesheet" href="{$fixed_base_url}assets/css/style.css" /> -->
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
-	href="{$fixed_base_url}assets/bootstrap/js/bootstrap.min.js" />
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	href="{$fixed_base_url}assets/bootstrap/js/scripts.js"></script>
 <!-- <link rel="stylesheet" href="{$fixed_base_url}assets/css/bootstrap.min.css"/> -->
@@ -35,30 +37,33 @@
 </head>
 
 <body>
-	<header>
-		<div class="container" class="row">
-			<h1 class="col-sm-3 hidden-sm">Kendo UI &hearts; Bootstrap</h1>
-			<h1 class="col-sm-3 visible-sm">
-				Kendo UI &hearts;<br /> Bootstrap
-			</h1>
-
-			<button id="configure" class="visible-xs">
-				<span class="glyphicon glyphicon-align-justify"></span>
-			</button>
-
-			<div id="configurator-wrap" class="col-sm-9 hidden-xs">
-				<div id="configurator" class="row">
-					<label class="col-sm-4">
-						<div class="description">Dimensions</div> <select id="dimensions"></select>
-					</label> <label class="col-sm-4">
-						<div class="description">Theme</div> <select id="theme"></select>
-					</label> <label class="col-sm-4">
-						<div class="description">Font-size</div> <select id="font-size"></select>
-					</label>
-				</div>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search...">
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
-	</header>
+	</nav>
+	<hr>
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
@@ -86,7 +91,6 @@
 						</button>
 						<a class="navbar-brand" href="#">Brand</a>
 					</div>
-
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
@@ -123,7 +127,6 @@
 								</ul></li>
 						</ul>
 					</div>
-
 				</nav>
 				<div class="row clearfix">
 					<div class="col-md-2 column">
@@ -193,9 +196,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	{block name=javascript}{/block}
-
 </body>
 </html>

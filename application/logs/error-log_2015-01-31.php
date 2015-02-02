@@ -1,0 +1,1 @@
+2015-01-31 17:49:05	ERROR	::1	Severity: Warning  --> filemtime(): stat failed for application/modules/layout/views\application\modules\story\views\view_chapter.tpl E:\xampp\htdocs\truyen\application\third_party\Smarty\sysplugins\smarty_resource.php 317

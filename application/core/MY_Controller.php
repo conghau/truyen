@@ -26,7 +26,7 @@ class MY_Controller extends MX_Controller {
 		$this->data['language'] = ($this->config->item('language') == '') ? 'vietnamese' : $this->config->item('language') ;
 
 		// ===== ライブラリ群のロード =====
-		$libraries = array('parser', 'device');
+		$libraries = array('parser', 'device','pagination');
 		
 		$this->load->library($libraries);
 		$helpers = array('cookie', 'language', 'sqlutil', 'htmlutil','arrayutil');
@@ -541,7 +541,7 @@ class MY_Controller extends MX_Controller {
 		$config['base_url'] = $url;
 		$config['total_rows'] = $total_records;
 		$config["uri_segment"] = $uri_segment;
-
+		
 		$paginateConf = $this->config->item($conf_key);
 	
 		foreach ($paginateConf as $key => $value) {
@@ -549,18 +549,17 @@ class MY_Controller extends MX_Controller {
 		}
 		
 		$this->data['pagination_per_page'] = $config['per_page'];
-		$forminfo = config_item('forminfo');
-		$this->data['pagination_total_option'] = $forminfo['common']['pagination']['total_item'];
-		$this->data['pagination_per_page_option'] = $forminfo['common']['pagination']['per_page_list'];
-		$this->data['format_tsv'] = $forminfo['common']['format_export_tsv'];
+		//$forminfo = config_item('forminfo');
+		//$this->data['pagination_total_option'] = $forminfo['common']['pagination']['total_item'];
+		//$this->data['pagination_per_page_option'] = $forminfo['common']['pagination']['per_page_list'];
+		//$this->data['format_tsv'] = $forminfo['common']['format_export_tsv'];
 		
-		if (TRUE == $condition['per_page']) {
+		if (isset($condition['per_page']) && TRUE == $condition['per_page']) {
 			$config['per_page'] = $condition['per_page'];
 		}
 		$this->data['per_page'] = $config['per_page'];
-	
+		
 		$this->pagination->initialize($config);
-	
 		// ページングリンク作成
 		$this->data['links'] = $this->customize_links($this->pagination->create_links(), $config, $total_records);
 	

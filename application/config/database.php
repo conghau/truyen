@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = '127.0.0.1';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'root';
-$db['default']['database'] = 'db_truyen';
+$db['default']['password'] = '';
+$db['default']['database'] = 'db_truyen_chu';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;
@@ -66,8 +66,8 @@ $db['default']['stricton'] = FALSE;
 
 $db['slave']['hostname'] = '127.0.0.1';
 $db['slave']['username'] = 'root';
-$db['slave']['password'] = 'root';
-$db['slave']['database'] = 'db_truyen';
+$db['slave']['password'] = '';
+$db['slave']['database'] = 'db_truyen_chu';
 $db['slave']['dbdriver'] = 'mysqli';
 $db['slave']['dbprefix'] = '';
 $db['slave']['pconnect'] = FALSE;
