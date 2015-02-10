@@ -15,14 +15,14 @@
 |
 */
 if (ENVIRONMENT === 'production') {
-	$config['base_url']	= 'http://'.$_SERVER['SERVER_NAME'].'/truyen';
-	$config['ssl_base_url']	= 'https://'.$_SERVER['SERVER_NAME'].'/truyen';
+	$config['base_url']	= 'http://'.$_SERVER['SERVER_NAME'].':8080/truyen';
+	$config['ssl_base_url']	= 'https://'.$_SERVER['SERVER_NAME'].'8080/truyen';
 } else {
-	$config['base_url']	= 'http://'.$_SERVER['SERVER_NAME'].'/truyen';
-	$config['ssl_base_url']	= 'https://'.$_SERVER['SERVER_NAME'].'/truyen';
+	$config['base_url']	= 'http://'.$_SERVER['SERVER_NAME'].':8080/truyen';
+	$config['ssl_base_url']	= 'https://'.$_SERVER['SERVER_NAME'].'8080/truyen';
 }
-$config['root_url']	= 'http://'.$_SERVER['SERVER_NAME'].'/truyen';
-$config['ssl_root_url']	= 'https://'.$_SERVER['SERVER_NAME'].'/truyen';
+$config['root_url']	= 'http://'.$_SERVER['SERVER_NAME'].':8080/truyen';
+$config['ssl_root_url']	= 'https://'.$_SERVER['SERVER_NAME'].':8080/truyen';
 
 /*
 |--------------------------------------------------------------------------
