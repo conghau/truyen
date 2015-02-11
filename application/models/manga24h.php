@@ -108,8 +108,7 @@ class Manga24h
     {
         //try {
             $html = file_get_html($linkManga);
-            var_dump($html);
-            if (!isset($html)) {
+            if ($html == FALSE) {
                 return FALSE;
             }
             //get info

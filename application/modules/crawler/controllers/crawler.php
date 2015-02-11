@@ -31,16 +31,16 @@ class Crawler extends MY_Controller{
 
 			$objManga24h = new Manga24h();
 			$objDao = new Manga24h_StoryDao(MASTER);
-			$lst_manga = $objDao->get_list(100);
+			$lst_manga = $objDao->get_list(0);
 			foreach($lst_manga as $manga) {
 				//var_dump($manga->link);;
 				$r = $objManga24h->getMangaDetail($manga->link);
 				echo 'l ';
-				//var_dump($r);
 				$recordset = array();
-				$recordset = $r['arrInfo'];
+				if($r !== FALSE) {
+					$recordset = $r['arrInfo'];
+				}
 				$recordset['status'] = STATUS_DONE;
-				var_dump($recordset);
 				$objDao->update_record($manga->id, $recordset);
 				echo 'done';
 			}
