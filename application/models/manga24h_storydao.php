@@ -90,4 +90,44 @@ class Manga24h_StoryDao extends My_DataMapper {
 		$this->trans_commit();
 		return TRUE;
 	}
+
+	public function update_record($id, $recordset = array()) {
+		$target = array(
+			'manga24h_id'
+			,'title'
+			,'avatar'
+			,'intro'
+			,'link'
+			,'type'
+			,'state'
+			,'source'
+			,'view'
+			,'author'
+			,'status'
+		);
+
+		$target_recordset = array();
+
+		foreach ($target as $key) {
+			if (array_key_exists($key, $recordset)) {
+				$target_recordset[$key] = (trim($recordset[$key]) !== "") ? trim($recordset[$key]) : NULL;
+			}
+		}
+		$this->trans_begin();
+		$result =  $this->where('id', $id)->update($target_recordset);
+
+		if(!$result){
+			$this->trans_rollback();
+			return FALSE;
+		}
+		$this->trans_commit();
+		return TRUE;
+
+	}
+	function get_list($limit = 10 ,$offset = 0 ) {
+		if($limit == 0 ) {
+			return $this->where('status = ', STATUS_WAIT)->get();
+		}
+		return $this->where('status = ', STATUS_WAIT)->get($limit,$offset);
+	}
 }

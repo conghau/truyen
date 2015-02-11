@@ -16,7 +16,7 @@ define('HTML_ENCODING', 'UTF-8');
 |
 */
 define('FILE_READ_MODE', 0644);
-define('FILE_WRITE_MODE', 0666);
+define('FILE_WRITE_MODE', 0777);
 define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0777);
 
@@ -228,5 +228,12 @@ define('CONFIG_TYPE_THREAD_NOT_READ_24', 10);			//２４時間以内に既読状
 define('ENCODE_SHIFT_JIS', 1);
 define('ENCODE_UTF_8', 2);
 define('DISPLAY_FILE_UPLOAD',5);
+
+//crawler
+define('STATUS_WAIT', 0);
+define('STATUS_DONE', 1);
+
+
+
 //* End of file constants.php */
 /* Location: ./application/config/constants.php */

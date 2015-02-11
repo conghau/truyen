@@ -106,12 +106,30 @@ class Manga24h
 
     public function getMangaDetail($linkManga)
     {
-        try {
+        //try {
             $html = file_get_html($linkManga);
+            var_dump($html);
+            if (!isset($html)) {
+                return FALSE;
+            }
             //get info
             $arr_info = array();
+            $targets = array(
+                            'the-loai'=>'type'
+                            ,'tac-gia-' => 'author'
+                            ,'tinh-trang' => 'state'
+                            ,'luot-xem' => 'view'
+                            ,'nguon' => 'source'
+                            ,'ngay-dang' => 'created_at'
+                        );
             foreach ($html->find('div#truyen_thongtin > table > tr') as $element) {
-                $arr_info[$element->childNodes(0)->plaintext] = $element->childNodes(1)->plaintext;
+                $key =  url_friendly(str_replace(':','',$element->childNodes(0)->plaintext));
+                if (array_key_exists($key, $targets)) {
+                    $key = $targets[$key];
+                    $arr_info[$key] = $element->childNodes(1)->plaintext;
+                } else {
+                    $arr_info[$key] = $element->childNodes(1)->plaintext;
+                }
                 //echo $element->eq();
             }
 
@@ -138,16 +156,18 @@ class Manga24h
             $this->arrChapter = $this->getListChapter($linkManga,$html);
 
             $arrData = array();
+            $this->arrInfo['intro'] = $this->intro;
+            $this->arrInfo['title'] = $this->title;
+            $this->arrInfo['avatar'] = $this->avatar;
+
             $arrData['arrInfo'] = $this->arrInfo;
+
             $arrData['arrChapter'] = $this->arrChapter;
-            $arrData['intro'] = $this->intro;
-            $arrData['title'] = $this->title;
-            $arrData['avatar'] = $this->avatar;
             return $arrData;
 
-        } catch (Exception $e) {
-            var_dump($e);
-        }
+        //} catch (Exception $e) {
+        //    return null;
+        //}
 
     }
 
