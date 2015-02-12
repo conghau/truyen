@@ -152,7 +152,7 @@ class Manga24h
             }
 
             //get list chapter
-            $this->arrChapter = $this->getListChapter($linkManga,$html);
+            //$this->arrChapter = $this->getListChapter($linkManga,$html);
 
             $arrData = array();
             $this->arrInfo['intro'] = $this->intro;
@@ -161,7 +161,7 @@ class Manga24h
 
             $arrData['arrInfo'] = $this->arrInfo;
 
-            $arrData['arrChapter'] = $this->arrChapter;
+            //$arrData['arrChapter'] = $this->arrChapter;
             return $arrData;
 
         //} catch (Exception $e) {
@@ -175,6 +175,9 @@ class Manga24h
         if ($html == null) {
             $html = file_get_html($linkManga);
         }
+        if(false == $html) {
+            return FALSE;
+        }
         $arrChapter = array();
 		$i = 0 ;
         foreach($html->find('table.table_manga > tr') as $element) {
@@ -185,6 +188,8 @@ class Manga24h
             $chapter = array();
             $chapter['name'] = trim($element->first_child()->first_child()->plaintext);
             $chapter['link'] = $element->first_child()->first_child()->href;
+            $arr = explode("/", $chapter['link']);
+            $chapter['chapter24h_id'] = $arr[3];
             array_push($arrChapter, $chapter);
         }
         return $arrChapter;
@@ -195,9 +200,14 @@ class Manga24h
        $arrChapterImage = array();
         if (! is_null($linkChapter)) {//.'<br />';
           $html = file_get_html($linkChapter);
+            if($html == false) {
+                return FALSE;
+            }
           foreach ($html->find('img.img-responsive') as $element)
           {
-              array_push($arrChapterImage, $element->src);
+              $a = array();
+              $a['link'] = $element->src;
+              array_push($arrChapterImage, $a);
           }
         }
         return $arrChapterImage;

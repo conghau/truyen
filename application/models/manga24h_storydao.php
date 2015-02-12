@@ -104,6 +104,7 @@ class Manga24h_StoryDao extends My_DataMapper {
 			,'view'
 			,'author'
 			,'status'
+			,'status_2'
 		);
 
 		$target_recordset = array();
@@ -129,5 +130,12 @@ class Manga24h_StoryDao extends My_DataMapper {
 			return $this->where('status = ', STATUS_WAIT)->get();
 		}
 		return $this->where('status = ', STATUS_WAIT)->get($limit,$offset);
+	}
+
+	function get_list_2($limit = 10 ,$offset = 0 ) {
+		if($limit == 0 ) {
+			return $this->where('status = ', STATUS_DONE)->where('status_2 = ', STATUS_WAIT)->get();
+		}
+		return $this->where('status = ', STATUS_DONE)->where('status_2 = ', STATUS_WAIT)->get($limit,$offset);
 	}
 }
