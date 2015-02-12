@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="340cbce9-889c-405a-a9c1-5a3bcb79e0aa" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/manga24h_chapterdao.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/manga24h_imagedao.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/application/cache/smarty/compiled/1187799fc4fda18cf37578502aa06281752788e1.string.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/application/cache/smarty/compiled/45940419343d92e684a7ee8879beb9f247674cba.string.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/application/cache/smarty/compiled/83d343731db5fbabc4a3d0fed9193881b140275e.string.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/application/cache/smarty/compiled/e6ee618e701ef485344ac32675cec480b8f8571b.file.story_introduce.tpl.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/application/cache/smarty/compiled/ff8686066cb90541bba31905938dc3151f8a52f6.file.view_chapter.tpl.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/crawler/controllers/crawler.php" afterPath="$PROJECT_DIR$/application/modules/crawler/controllers/crawler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/crawler/mail_template/english/email_notice.tpl" afterPath="$PROJECT_DIR$/application/modules/crawler/mail_template/english/email_notice.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/crawler/mail_template/japanese/email_notice.tpl" afterPath="$PROJECT_DIR$/application/modules/crawler/mail_template/japanese/email_notice.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/logs/error-log_2015-02-11.php" afterPath="$PROJECT_DIR$/application/logs/error-log_2015-02-11.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/crawler/config/forminfo.php" afterPath="$PROJECT_DIR$/application/modules/crawler/config/forminfo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/crawler/config/forminfo.yaml" afterPath="$PROJECT_DIR$/application/modules/crawler/config/forminfo.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/manga24h.php" afterPath="$PROJECT_DIR$/application/models/manga24h.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/manga24h_storydao.php" afterPath="$PROJECT_DIR$/application/models/manga24h_storydao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/crawler/config/routes.php" afterPath="$PROJECT_DIR$/application/modules/crawler/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/simple_html_dom.php" afterPath="$PROJECT_DIR$/application/libraries/simple_html_dom.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="truyen.iws" />
@@ -477,12 +471,20 @@
       <option name="number" value="Default" />
       <updated>1423216905151</updated>
     </task>
+    <task id="LOCAL-00001" summary="update source">
+      <created>1423734662053</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1423734662053</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1020" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -519,7 +521,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="update source" />
+    <option name="LAST_COMMIT_MESSAGE" value="update source" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
