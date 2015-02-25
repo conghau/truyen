@@ -1084,7 +1084,6 @@ class simple_html_dom
 		// end
 		$this->root->_[HDOM_INFO_END] = $this->cursor;
 		$this->parse_charset();
-
 		// make load function chainable
 		return $this;
 

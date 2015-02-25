@@ -95,31 +95,31 @@ class Crawler extends MY_Controller{
 	public function GetImageManga24h($linkChapter = ''){
 		try {
 			$objManga24h = new Manga24h();
-			$objCDao = new Manga24h_ChapterDao(MASTER);
-			$objDao = new Manga24h_ImageDao(MASTER);
+			//$objCDao = new Manga24h_ChapterDao(MASTER);
+			//$objDao = new Manga24h_ImageDao(MASTER);
 
-			//$arrImage = $objManga24h->getChapterImage('http://manga24h.com/93114/Bungaku-Shoujo-to-Shi-ni-Tagari-no-Douke-chap-8/');
-			//var_dump($arrImage);
-
-			$lst_chapter = $objCDao->get_list(500);
-			foreach($lst_chapter as $chapter) {
-				var_dump($chapter->link);
-				$arrImage = $objManga24h->getChapterImage($chapter->link);
-				if($arrImage !== FALSE) {
-					$total = count($arrImage);
-					for($i =0; $i <$total; $i++) {
-						$arrImage[$i]['chapter_id'] = $chapter->id;
-					}
-					$r = $objDao->insert_bulk($arrImage);
-					if($r) {
-						$objCDao->update_record($chapter->id, array('status' => STATUS_DONE));
-					}
-				} else {
-					$objCDao->update_record($chapter->id, array('status' => STATUS_DONE));
-				}
+			$arrImage = $objManga24h->getChapterImage('http://manga24h.com/104957/em-be-va-toi-[tt8]-chap-36/');
+			var_dump($arrImage);
+//			die;
+//			$lst_chapter = $objCDao->get_list(600);
+//			foreach($lst_chapter as $chapter) {
+//				//var_dump($chapter->link);
+//				$arrImage = $objManga24h->getChapterImage($chapter->link);
+//				if($arrImage !== FALSE) {
+//					$total = count($arrImage);
+//					for($i =0; $i <$total; $i++) {
+//						$arrImage[$i]['chapter_id'] = $chapter->id;
+//					}
+//					$r = $objDao->insert_bulk($arrImage);
+//					if($r) {
+//						$objCDao->update_record($chapter->id, array('status' => STATUS_DONE));
+//					}
+//				} else {
+//					$objCDao->update_record($chapter->id, array('status' => STATUS_DONE));
+//				}
 				echo 'done';
-			}
-
+//			}
+//			log_message('crontab','GetImageManga24h');
 
 
 			//$objManga24h = new Manga24h();
@@ -138,14 +138,16 @@ class Crawler extends MY_Controller{
 // 				echo "This script can only be accessed via the command line" . PHP_EOL;
 // 				return;
 // 			}
-			$objManga24h = new Manga24h();
+			//$objManga24h = new Manga24h();
 			//$a =  $objManga24h->getListManga();
 			//var_dump($a);
 			//$objDao = new Manga24h_StoryDao(MASTER);
 			//$r = $objDao->insert_bulk($a);
-			$b = $objManga24h->getMangaDetail('http://manga24h.com/3931/Abnormal-kei-Joshi-Nhung-co-nang-ki-quai.html');
+			//$b = $objManga24h->getMangaDetail('http://manga24h.com/3931/Abnormal-kei-Joshi-Nhung-co-nang-ki-quai.html');
 			//$c = $objManga24h->getChapterImage('http://manga24h.com/93114/Bungaku-Shoujo-to-Shi-ni-Tagari-no-Douke-chap-8/');
-			var_dump($b);
+			//var_dump($b);
+			echo 'da chay';
+			log_message('crontab','da chay');
 			
 		} catch (Exception $e) {
 			log_message('error',$e->getMessage());

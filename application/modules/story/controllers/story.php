@@ -29,16 +29,15 @@ class Story extends MY_Controller {
 	 */
 	public function index($user_id = null) {
 		try {
-			echo '1';
-// 		    $objStoryDao = new StoryDao();
-// 		    //pagination
-// 		    $url = $this->data['base_url']."story/paginate";
-// 		    $uri_segment = 3;
-// 		    $total_records = $objStoryDao->count_by_condition();
-// 		   	$limit = $this->create_pagination($total_records, '', $url, $uri_segment);
-// 		   	$this->data['list_story'] = $objStoryDao->search('',$limit);
+ 		    $objStoryDao = new StoryDao();
+ 		    //pagination
+ 		    $url = $this->data['base_url']."story/paginate";
+ 		    $uri_segment = 3;
+ 		    $total_records = $objStoryDao->count_by_condition();
+ 		   	$limit = $this->create_pagination($total_records, '', $url, $uri_segment);
+ 		   	$this->data['list_story'] = $objStoryDao->search('',$limit);
 		   	
-// 		    $this->parse('index.tpl', 'user/index');
+ 		    $this->parse('index.tpl', 'user/index');
 		} catch (Exception $e) {
 			log_message('error', $e->getMessage());
 			show_error($e->getMessage());

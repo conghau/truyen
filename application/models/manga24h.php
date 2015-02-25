@@ -199,12 +199,13 @@ class Manga24h
     {
        $arrChapterImage = array();
         if (! is_null($linkChapter)) {//.'<br />';
-          $html = file_get_html($linkChapter);
+          $html = @file_get_html($linkChapter);
             if($html == false) {
                 return FALSE;
             }
-          foreach ($html->find('img.img-responsive') as $element)
+          foreach ($html->find('img') as $element)
           {
+              var_dump($element);
               $a = array();
               $a['link'] = $element->src;
               array_push($arrChapterImage, $a);
