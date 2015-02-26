@@ -232,6 +232,7 @@ define('DISPLAY_FILE_UPLOAD',5);
 //crawler
 define('STATUS_WAIT', 0);
 define('STATUS_DONE', 1);
+define('PERPAGE', 1);
 
 
 

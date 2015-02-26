@@ -56,7 +56,7 @@ class Comic extends MY_Controller {
 
 			$objStoryDetailDao = new Comic_ChapterDao();
 			$this->data['lst_chapter'] = $objStoryDetailDao->getByStoryId($story_id);
-
+			$this->data['total_chapter'] = count($this->data['lst_chapter']);
 			$this->parse('story_introduce.tpl', 'user/story');
 		} catch (Exception $e) {
 			log_message('error', $e->getMessage());
@@ -72,6 +72,7 @@ class Comic extends MY_Controller {
 			$this->data['comic_title'] = $objComicDao->getFIELD_byId('title', $story_id)->title;
 			$lst_chapter = $objComicChapterDao->getByStoryId($story_id);
 			$this->data['lst_chapter'] = $lst_chapter;
+
 			$lst_image = $objComicImageDao->getByChapterId($chapter_id);
 			$this->data['lst_image'] = $lst_image;
 
@@ -82,5 +83,9 @@ class Comic extends MY_Controller {
 			log_message('error', $e->getMessage());
 			show_error($e->getMessage());
 		}
+	}
+
+	public function getChapter($page , $limit) {
+
 	}
 }
